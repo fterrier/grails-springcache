@@ -22,7 +22,7 @@ import grails.plugin.springcache.key.CacheKeyBuilder
  */
 final class CacheKey implements Serializable {
 
-	private final int hash
+	private final long hash
 	private final long checksum
 
 	static CacheKey generate(Object[] components) {
@@ -33,7 +33,7 @@ final class CacheKey implements Serializable {
 		builder.toCacheKey()
 	}
 
-	CacheKey(int hashCode, long checksum) {
+	CacheKey(long hashCode, long checksum) {
 		this.hash = hashCode
 		this.checksum = checksum
 	}
@@ -48,7 +48,7 @@ final class CacheKey implements Serializable {
 
 	@Override
 	int hashCode() {
-		int result = hash
+		int result = hash + 0
 		31 * result + (checksum ^ (checksum >>> 32))
 	}
 

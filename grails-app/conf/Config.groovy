@@ -13,3 +13,5 @@ grails {
 		alias.cacheConfiguration="7. Cache Configuration"
 	}
 }
+grails.views.default.codec="none" // none, html, base64
+grails.views.gsp.encoding="UTF-8"

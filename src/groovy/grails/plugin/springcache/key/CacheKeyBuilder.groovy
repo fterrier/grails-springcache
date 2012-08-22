@@ -26,11 +26,11 @@ import grails.plugin.springcache.CacheKey
 class CacheKeyBuilder {
 
 	private static final int INITIAL_HASH = 17
-	private static final int MULTIPLIER = 31
+	private static final int MULTIPLIER = 63
 
 	private int count = 0
 	private long checksum = 0L
-	private int hash = INITIAL_HASH
+	private long hash = INITIAL_HASH
 
 	CacheKeyBuilder append(int i) {
 		hash = hash * MULTIPLIER + i
